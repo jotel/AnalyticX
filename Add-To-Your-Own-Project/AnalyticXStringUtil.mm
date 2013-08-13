@@ -1,3 +1,4 @@
+
 //
 //  AnalyticXStringUtil.cpp
 //  AnalyticX
@@ -38,15 +39,9 @@
         return NULL;
     }
     
-    CCLOG("1");
-    
     NSMutableDictionary *nsDict = [NSMutableDictionary dictionaryWithCapacity:ccDictionary->allKeys()->count()];
     
-    CCLOG("2");
-
     for (int i = 0; i < ccDictionary->allKeys()->count(); i++) {
-        CCLOG("3");
-        
         cocos2d::CCObject* obj = ccDictionary->objectForKey(((cocos2d::CCString *)ccDictionary->allKeys()->objectAtIndex(i))->getCString());
         NSObject* nsObject;
         if(isKindOfClass(obj, cocos2d::CCDictionary))
