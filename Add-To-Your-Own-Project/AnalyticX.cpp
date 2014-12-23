@@ -37,7 +37,7 @@ AXFlurryEventRecordStatus AnalyticX::flurryLogEvent(const char * eventName, ...)
         return AXFlurryEventFailed;
     } else {
         jstring stringArg0 = minfo.env->NewStringUTF("flurryLogEvent");
-        jstring stringArg1 = minfo.env->NewStringUTF(szBuf);
+        jstring stringArg1 = minfo.env->NewStringUTF(eventName);
         jstring stringArg2 = minfo.env->NewStringUTF("false");
 
         return (AXFlurryEventRecordStatus)minfo.env->CallStaticIntMethod(minfo.classID, minfo.methodID, stringArg0, stringArg1, stringArg2);
